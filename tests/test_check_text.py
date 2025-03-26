@@ -15,16 +15,8 @@ def test_find_text_foot(browser):
 def test_find_text_elements(browser):
     demo_qa_page = DemoQa(browser)
     elements_page = ElementsPage(browser)
-    demo_qa_page.visit()
-    assert demo_qa_page.equal_url()
     demo_qa_page.btn_elements.click()
     assert elements_page.equal_url()
-    all_elements = demo_qa_page.respon
 
-    center_text = 'Please select an item from left to start practice.'
-    for element in all_elements:
-        if center_text in element:
-            break
-
-    assert center_text == 'Please select an item from left to start practice.'
+    assert str(elements_page.center_element.get_text()) == 'Please select an item from left to start practice.'
 
