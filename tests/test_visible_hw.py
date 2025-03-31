@@ -7,16 +7,16 @@ def test_visible_accordion(browser):
 
        accordion_page.visit()
 
-       assert accordion_page.sct_element.visible()
-       accordion_page.hd_element.click()
+       assert accordion_page.element_cont.visible()
+       accordion_page.element_hd.click()
        time.sleep(3)
-       assert not accordion_page.sct_element.visible()
+       assert not accordion_page.element_cont.visible()
 
-def test_not_visible_icon(browser):
+def test_visible_accordian_default(browser):
        accordion_page = AccordionPage(browser)
 
        accordion_page.visit()
 
-       assert not accordion_page.chk1_element.visible()
-       assert not accordion_page.chk2_element.visible()
-       assert not accordion_page.chk3_element.visible()
+       assert not accordion_page.element_1.visible()
+       assert not accordion_page.element_2.visible()
+       assert not accordion_page.element_3.visible()
